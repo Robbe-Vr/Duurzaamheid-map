@@ -1,0 +1,5 @@
+Docker build command:
+sudo docker build -t robbev/duurzaamheid-map .
+
+Docker run command: 
+sudo docker run -d --restart unless-stopped -p 7776:7007 --name duurzaamheid-map robbev/duurzaamheid-map

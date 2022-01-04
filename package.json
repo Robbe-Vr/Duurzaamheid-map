@@ -1,0 +1,32 @@
+{
+  "name": "duurzaamheid-map",
+  "version": "1.0.0",
+  "description": "duurzaamheid map met bomen",
+  "main": "app.js",
+  "dependencies": {
+    "crypto": "^1.0.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "fs": "^0.0.1-security",
+    "qs": "^6.9.4",
+    "querystring": "^0.2.0",
+    "serve-index": "^1.9.1",
+    "three": "^0.124.0",
+    "threebox": "^0.1.5",
+    "unirest": "^0.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "-"
+  },
+  "keywords": [
+    "duurzaamheid",
+    "map"
+  ],
+  "author": "RobbeV",
+  "license": "ISC"
+}

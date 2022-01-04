@@ -1,0 +1,161 @@
+<head>
+  <meta charset="utf-8" />
+  <meta
+    name="viewport"
+    content="initial-scale=1,maximum-scale=1,user-scalable=no"
+  />
+  <!-- Custom CSS -->
+  <link href="./css/maps.css" rel="stylesheet" />
+  <link href="./css/site.css" rel="stylesheet" />
+
+  <!-- Bootstrap -->
+  <link href="./lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Font-Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+  <!-- JQuery -->
+  <script src="./lib/jquery/dist/jquery.min.js"></script>
+
+  <!-- THREEBOX.js -->
+  <script src="./js/threeJS/threebox.min.js" type="text/javascript"></script>
+  <link href="./css/threebox.css" rel="stylesheet" />
+
+  <!-- Mapbox -->
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+</head>
+<body>
+  <div>
+    <div id="map"></div>
+
+    <div class="ivn-font menu menu-custom-1" style="display: none;">
+      <div class="info-panel">
+        <h3>Over deze kaart</h3><br />
+        <text>Deze kaart heeft 3 kaarttypes welke u kunt veranderen met de 'verander mode' knop linksboven in het scherm.</text><br />
+        <text>De 3 modes zijn: Een heatmap kaart met punten die aangeven waar activiteiten plaatsvinden, een kaart met markeringen per regio met alle activiteiten en een 3D kaart met bomen voor elke activiteit.</text><br />
+        <text>(Let op: De 3D kaart kan veel van uw computer vragen!)</text><br />
+        <text>Alleen mensen met rechten kunnen activiteiten aan deze kaart toevoegen.</text>
+      </div>
+    </div>
+
+    <form action="/submit-action" method="POST">
+      <div class="ivn-font menu" style="display: none;">
+        <div class="add-activity-form-container" tabindex="-1">
+          <div class="row">
+            <div class="col-10">
+              <h2>Duurzame activiteit delen</h2><br />
+              <label for="Action">Vat je duurzame actie samen in één of meer kernwoorden:</label><br />
+              <input type="text" class="activity-input" maxlength="50" minlength="2" placeholder="vat je actie samen" name="Action" id="Action" /><br />
+              <label for="Description">Beschrijf de duurzame actie die je hebt ondernomen:</label><br />
+              <textarea type="text" class="activity-input" maxlength="200" minlength="2" placeholder="beschrijf je actie" name="Description" id="Description" 
+                rows="5" cols="50" style="resize: none;" onkeyup="CountChars(this)"></textarea>
+              <div id="charNum" style="margin-left: 12px;">0 / 200</div><br />
+              <br />
+              <label for="Place">Waar heb je deze actie ondernomen?</label><br />
+              <input type="text" class="activity-input activity-regions-search" style="margin-bottom: 2px;" placeholder="plaatsnaam"/>
+              <select class="region-search-country-select">
+                <option value="nl">NL</option>
+                <option value="be">BE</option>
+                <option value="lu">LU</option>
+                <option value="de">DE</option>
+                <option value="at">AT</option>
+                <option value="fr">FR</option>
+                <option value="pl">PL</option>
+                <option value="fr">FR</option>
+                <option value="es">ES</option>
+                <option value="it">IT</option>
+                <option value="dk">DK</option>
+                <option value="se">SE</option>
+                <option value="no">NO</option>
+                <option value="SF">SF</option>
+                <option value="uk">UK</option>
+                <option value="ie">IE</option>
+                <option value="us">US</option>
+                <option value="ca">CA</option>
+                <option value="au">AU</option>
+              </select><br />
+              <select class="activity-select" style="margin-top: 2px;" placeholder="plaats" name="Place" id="Place">
+          
+              </select><br />
+              <br />
+              <label for="Name">Wat is je naam?</label><br />
+              <input type="text" class="activity-input" maxlength="50" minlength="2" placeholder="naam" name="Name" id="Name" /><br />
+              <br />
+              <label for="hasOnsIvnAccount">Ik heb een account op <a class="text-decoration-none" target="_blank" href="https://ons.ivn.nl/">ons.ivn</a>:</label>
+              <input type="checkbox" class="activity-checkbox onsivnaccount-checkbox" name="hasOnsIvnAccount" id="hasOnsIvnAccount" /><br />
+              <span id="OnsIvnAccount" style="display: none;">
+                <br />
+                <label for="OnsIvnAccount">Hoe kunnen we je vinden op <a class="text-decoration-none" target="_blank" href="https://ons.ivn.nl/">ons.ivn</a>?</label><br />
+                <input type="text" class="activity-input" maxlength="50" minlength="2" placeholder="account naam op ons.ivn" name="OnsIvnAccount" id="OnsIvnAccount" />
+                <br />
+              </span>
+              <br />
+              <button type="submit" class="btn create-activity-button ivn-background-color">Activiteit delen</button>
+            </div>
+            <div class="col-2 add-activity-form-options">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="ivn-font menu" style="display: none;">
+      <div class="manage-menu">
+        <div class="row">
+          <div class="col-12">
+            <h2>Beheer</h2>
+          </div>
+        </div>
+        <div class="row height-inherit">
+          <div class="col-12">
+            <div class="manage-panel" tabindex="-1">
+              <div class="manage-login">
+                <label for="manage-auth-password">Wachtwoord:</label><br />
+                <input type="password" class="manage-text-input" id="manage-auth-password" /><br />
+                <br />
+                <button type="button" class="btn manage-auth-button ivn-background-color">Inloggen</button>
+              </div>
+              <div class="manage-ui" style="display: none;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.13.0/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@10.13.0/dist/sweetalert2.min.css" rel="stylesheet">
+
+    <!-- Custom Scripts -->
+    <script src="./js/map-utils.js"></script>
+    <script src="./js/manage-security.js"></script>
+    <script src="./js/modes/simple-map.js"></script>
+    <script src="./js/modes/advanced-map.js"></script>
+    <script src="./js/modes/heatmap-map.js"></script>
+    <script>
+      function CountChars(val, uniqueId) {
+        let max = parseInt($(val).attr('maxlength'));
+
+        let length = val.value.length;
+
+        $('#charNum' + (uniqueId ? "_" + uniqueId : "")).text(max - (max - length) + " / 200");
+      };
+
+      (async function () {
+        const urlParams = new URLSearchParams(window.location.search);
+
+        window.defaultMode = 3;
+
+        const modeMax = (window.modeMax = await CountModes());
+        let mode = (window.mode = urlParams.has('mode') ? parseInt(urlParams.get('mode')) : window.defaultMode);
+
+        if (mode > modeMax) mode = window.defaultMode;
+
+        Init(mode);
+        console.log("Initialized map on mode: " + mode);
+      })();
+    </script>
+  </div>
+</body>

@@ -1,0 +1,121 @@
+{
+    "regions": [
+        {
+            "Name": "Rotterdam",
+            "Coordinates": [
+                4.41667,
+                51.95
+            ],
+            "Activities": [
+                {
+                    "Show": true,
+                    "Activity": "Duurzame winkel",
+                    "Name": "Gerard",
+                    "Description": "Ik heb een duurzame winkel geopend",
+                    "Remove": "false",
+                    "HasOnsIvnAccount": false,
+                    "OnsIvnAccount": ""
+                }
+            ]
+        },
+        {
+            "Name": "Amsterdam",
+            "Coordinates": [
+                4.9,
+                52.378
+            ],
+            "Activities": [
+                {
+                    "Show": true,
+                    "Activity": "Duurzame winkel",
+                    "Name": "Frank",
+                    "Description": "Ik heb een duurzame winkel geopend",
+                    "Remove": "false",
+                    "HasOnsIvnAccount": false,
+                    "OnsIvnAccount": ""
+                },
+                {
+                    "Show": true,
+                    "Activity": "Bomen gepland",
+                    "Name": "Stefan",
+                    "Description": "Ik heb 5 bomen gepland in mijn voortuin",
+                    "Remove": "false",
+                    "HasOnsIvnAccount": false,
+                    "OnsIvnAccount": ""
+                }
+            ]
+        },
+        {
+            "Name": "Eindhoven",
+            "Coordinates": [
+                5.48417,
+                51.43444
+            ],
+            "Activities": [
+                {
+                    "Show": true,
+                    "Activity": "Bomen gepland",
+                    "Name": "Henk",
+                    "Description": "Ik heb 3 bomen gepland in mijn voortuin",
+                    "Remove": "false",
+                    "HasOnsIvnAccount": false,
+                    "OnsIvnAccount": ""
+                },
+                {
+                    "Show": true,
+                    "Activity": "Groen dak",
+                    "Name": "Bert",
+                    "Description": "Ik heb een groen dak aangelegd",
+                    "Remove": "false",
+                    "HasOnsIvnAccount": false,
+                    "OnsIvnAccount": ""
+                }
+            ]
+        },
+        {
+            "Name": "Veldhoven",
+            "Coordinates": [
+                5.3992,
+                51.4197
+            ],
+            "Activities": [
+                {
+                    "Show": true,
+                    "Activity": "Flessen inzamel actie",
+                    "Name": "Renske",
+                    "Description": "Ik ben een flessen inzamel actie gestart",
+                    "HasOnsIvnAccount": true,
+                    "OnsIvnAccount": "Renske Vrijenhoek",
+                    "Remove": "false"
+                },
+                {
+                    "Show": true,
+                    "Activity": "Boom gepland",
+                    "Name": "Jan",
+                    "Description": "Ik heb een boom gepland in mijn achtertuin",
+                    "Remove": "false",
+                    "HasOnsIvnAccount": false,
+                    "OnsIvnAccount": ""
+                }
+            ]
+        },
+        {
+            "Name": "Simpelveld",
+            "Coordinates": [
+                5.9822,
+                50.835
+            ],
+            "Activities": [
+                {
+                    "Show": true,
+                    "Activity": "Boom gepland",
+                    "Name": "Kees",
+                    "Description": "We hebben een hele grote boom gepland",
+                    "Remove": "false",
+                    "HasOnsIvnAccount": false,
+                    "OnsIvnAccount": ""
+                }
+            ]
+        }
+    ]
+}
